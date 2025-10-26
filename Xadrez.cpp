@@ -1,27 +1,35 @@
 #include<stdio.h>
 using namespace std;
 
-int main()
-{
-    int torre =1 , bispo=1, rainha=1;
-    printf("o movimento da torre é:\n");
-    
-    while (torre <= 5){
-        printf("movimente a direita uma casa\n");
-        torre++;
+void torre(int t){
+    if (t>0){
+    printf("movimente a direita uma casa\n");
+    torre(t-1);
     }
-   printf("o movimento do bispo é:\n");
-    
-   while (bispo <= 5){
+}
+
+void bispo(int b){
+    if (b>0){
         printf("para cima e direita\n");
-        bispo++;
+        bispo(b-1);
     }
-   printf("o movimento da rainha é:\n");
-    
-   while (rainha <= 8){
+}
+void rainha(int r){
+    if (r > 0){
         printf("movimente oito casas a esquerda\n");
-        rainha++;
+        rainha(r-1);
     }
+}
+int main(){
+    int torrem = 5;
+    printf("o movimento da torre é:\n");
+    torre(torrem);
+    printf("o movimento do bispo é:\n");
+    int bispom = 5;
+    bispo(bispom);
+    printf("o movimento da rainha é:\n");
+    int rainham =8;
+    rainha(rainham);
    for (int cavalo =1 ; cavalo <= 1; cavalo++){
        
        int mov =1;
